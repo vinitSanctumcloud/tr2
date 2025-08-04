@@ -102,31 +102,34 @@ export function AiAgent({
     }
   };
 
-  // Define the default robot image URL
-  const defaultRobotImage = 'https://via.placeholder.com/1200x630?text=Robot+Image'; // Replace with your actual robot image URL
+  // Define the default robot image URL (Unsplash AI robot image)
+  const defaultRobotImage =
+    'https://plus.unsplash.com/premium_photo-1751107029838-c341391ea8b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-  // Use thumbnailUrl if available, otherwise fallback to default robot image
-  const socialImage ='https://thumbs.dreamstime.com/b/innovative-medical-device-featuring-eye-image-illustrating-advanced-tracking-technology-generated-ai-358374352.jpg'
+  // Use thumbnailUrl if valid, otherwise use the default Unsplash image
+  const socialImage = defaultRobotImage;
 
   return (
     <div className="min-h-screen w-full py-4 relative bg-transparent">
       <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{pageTitle || 'AI Agent'}</title>
+        <meta name="description" content={pageDescription || 'Interact with our AI agent on LinkaAI'} />
+        <meta property="og:title" content={pageTitle || 'AI Agent'} />
+        <meta property="og:description" content={pageDescription || 'Interact with our AI agent on LinkaAI'} />
         <meta property="og:image" content={socialImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="AI Robot Preview Image" />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={`https://linkaai-9lgi.vercel.app/liveagent/${agentDetails?.ai_agent_slug ?? ''}`}
+          content={`https://linkaai-9lgi.vercel.app/liveagent/${agentDetails?.ai_agent_slug || ''}`}
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:title" content={pageTitle || 'AI Agent'} />
+        <meta name="twitter:description" content={pageDescription || 'Interact with our AI agent on LinkaAI'} />
         <meta name="twitter:image" content={socialImage} />
+        <meta name="twitter:image:alt" content="AI Robot Preview Image" />
       </Head>
 
       {/* Chatbox */}
@@ -308,7 +311,7 @@ export function AiAgent({
                       aria-label="Next card"
                     >
                       <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l-7 7 7-7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
                   </div>
