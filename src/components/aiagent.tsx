@@ -102,12 +102,13 @@ export function AiAgent({
     }
   };
 
-  // Define the default robot image URL (Unsplash AI robot image)
+  // Define the specific Unsplash image URL
   const defaultRobotImage =
-    'https://plus.unsplash.com/premium_photo-1751107029838-c341391ea8b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    'https://images.unsplash.com/photo-1599058917212-d750089bc07d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80';
 
-  // Use thumbnailUrl if valid, otherwise use the default Unsplash image
-  const socialImage = defaultRobotImage;
+  // Use thumbnailUrl if valid, otherwise use the Unsplash image
+  const socialImage =
+    thumbnailUrl && thumbnailUrl !== '/thumbnail.jpg' ? thumbnailUrl : defaultRobotImage;
 
   return (
     <div className="min-h-screen w-full py-4 relative bg-transparent">
@@ -123,7 +124,7 @@ export function AiAgent({
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={`https://linkaai-9lgi.vercel.app/liveagent/${agentDetails?.ai_agent_slug || ''}`}
+          content={`https://try-brud.vercel.app/liveagent/${agentDetails?.ai_agent_slug || ''}`}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle || 'AI Agent'} />
