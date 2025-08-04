@@ -117,7 +117,7 @@ export function AiAgent({
         <meta name="description" content={pageDescription || 'Interact with our AI agent on LinkaAI'} />
         <meta property="og:title" content={pageTitle || 'AI Agent'} />
         <meta property="og:description" content={pageDescription || 'Interact with our AI agent on LinkaAI'} />
-        <meta property="og:image" content={socialImage} />
+        <meta property="og:image" content="https://plus.unsplash.com/premium_photo-1751107029838-c341391ea8b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="AI Robot Preview Image" />
